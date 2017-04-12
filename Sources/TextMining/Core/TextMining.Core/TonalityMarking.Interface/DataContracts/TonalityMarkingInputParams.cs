@@ -25,6 +25,7 @@ namespace TonalityMarking
     /// <summary>
     /// 
     /// </summary>
+    [Serializable]
     public sealed class TonalityMarkingInputParams4InProcess
     {
         private List< string > _InquiriesSynonyms;

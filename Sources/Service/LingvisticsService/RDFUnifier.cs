@@ -26,6 +26,8 @@ namespace Lingvistics
         /// <returns>объединенный RDF</returns>
         public static string Union( IEnumerable< Tuple< string, int > > collection, out bool isEmpty )
         {
+            isEmpty = true;
+
             var result = default(string);
             if ( collection.Any() )
             {
@@ -51,14 +53,11 @@ namespace Lingvistics
                 }
                 if ( xe != null )
                 {
-                    result = xe.ToString();
+                    result  = xe.ToString();
+                    isEmpty = !xe.HasElements;
                 }
-                isEmpty = !xe.HasElements;
             }
-            else
-            {
-                isEmpty = true;
-            }
+
             return (result);
         }
 
