@@ -27,4 +27,7 @@ for /F %%i in ('dir /A:d /S/B "Sources\Tests\bin*"') do rd /S/Q %%i
 for /F %%i in ('dir /A:d /S/B "Sources\Tests\obj*"') do rd /S/Q %%i
 del "Sources\Tests\*.csproj.user" /S/Q/F/A
 
+del "Sources\.sln\Linguistics\*.VC.db" /S/Q/F/A
+del "Sources\.sln\Linguistics-with-OM-TM\*.VC.db" /S/Q/F/A
+
 pause
