@@ -413,7 +413,7 @@ public:
 
 private:
    // Организуем кеширование, следующим образом: Будем хранить структуры CSourceData в списке и 
-   // организуем два индекса по IDSource и Source при помощи hash_map в котором как значение будет 
+   // организуем два индекса по IDSource и Source при помощи unordered_map в котором как значение будет 
    // использоваться итератор списка.
    // При этом будет выполнятся следующее правила: 
    // 1. Если в индексе по конкретному Source есть данные то в индексе по
@@ -423,9 +423,9 @@ private:
    // добавить все возможные значения Source, а не только то которое соотвтествует IDSource
    typedef std::list<CSourceData> TStorage;                                        //Список всех сохранённых в кэше даных
 
-#if 0 //У hash_map в стандартной реализации VC резко падает производительность на определённых словах
-   typedef stdext::hash_map<unsigned int, TStorage::iterator> TIDSourceIndex;       //Индекс по IDSource.GetID
-   typedef stdext::hash_multimap<TString, TStorage::iterator> TSourceIndex;         //Индекс по Source
+#if 0 //У unordered_map в стандартной реализации VC резко падает производительность на определённых словах
+   typedef std::unordered_map<unsigned int, TStorage::iterator> TIDSourceIndex;       //Индекс по IDSource.GetID
+   typedef std::unordered_multimap<TString, TStorage::iterator> TSourceIndex;         //Индекс по Source
 #else
    typedef std::map<unsigned int, TStorage::iterator> TIDSourceIndex;               //Индекс по IDSource.GetID
    typedef std::multimap<TString, TStorage::iterator> TSourceIndex;                 //Индекс по Source

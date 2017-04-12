@@ -816,7 +816,7 @@ Linguistics::Core::IText^ LinguisticsKernelConroller::SelectEntities(String^ sTe
 void LinguisticsKernelConroller::SelectEntitiesOnContent(Linguistics::Core::Content^ content, String^ baseDate, EntitiesSelector^ selector)
 {
 	selector(content, baseDate);
-	array< Linguistics::Core::Content^ >^ children = content->GetChildren();
+	cli::array< Linguistics::Core::Content^ >^ children = content->GetChildren();
 	for (int i = 0; i < children->Length; ++i)
 	{
 		SelectEntitiesOnContent(children[i], baseDate, selector);

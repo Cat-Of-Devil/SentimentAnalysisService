@@ -34,7 +34,7 @@ public:
 class CPerformanceMeasure : public SS::Interface::Core::CommonServices::IPerformanceMeasure
 {
 public:
-	typedef stdext::hash_map<std::wstring, CTickMeasure> TTickMeasures;
+	typedef std::unordered_map<std::wstring, CTickMeasure> TTickMeasures;
 
 	CPerformanceMeasure();
 	virtual ~CPerformanceMeasure();

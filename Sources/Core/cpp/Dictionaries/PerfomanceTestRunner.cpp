@@ -447,9 +447,9 @@ void CTestPerpformance::TestIDictionaryTreeImpl( IDictionary *pDictionary, const
 
    if( false )
    {
-      typedef stdext::hash_map<std::wstring, int> TStringMap;
+      typedef std::unordered_map<std::wstring, int> TStringMap;
       TStringMap StringMap;
-      cout << "Скорость работы hash_map: ";
+      cout << "Скорость работы unordered_map: ";
 
       FindWords = 0;
       int i = 0;

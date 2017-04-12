@@ -38,7 +38,7 @@
 #include <iostream>
 #include <sstream>
 
-#include "crfsuite.h"
+#include <crfsuite.h>
 #include "crfsuite_api.hpp"
 
 namespace CRFSuite

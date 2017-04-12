@@ -16,12 +16,15 @@ namespace Lingvistics
 		private static void Main()
 		{
             var rgx = new Regex( @"(?<P>[^\s\""]+)|(\""(?<P>.*?)\"")", RegexOptions.Singleline );
-            string[] argv = rgx.Matches( Environment.CommandLine )
-                               .Cast< Match >()
-                               .Select( m => m.Groups[ "P" ].Value )
-                               .ToArray();
+            var runAsConsole = rgx.Matches( Environment.CommandLine )
+                                  .Cast< Match >()
+                                  .Select( m => m.Groups[ "P" ].Value )
+                                  .Where( arg => string.Compare( arg, "-console", true ) == 0 ||
+                                                 string.Compare( arg, "console" , true ) == 0 ||
+                                                 string.Compare( arg, "-c" , true ) == 0)
+                                  .Any();
 
-            if ( (1 < argv.Length) && (string.Compare( argv[ 1 ], "console", true ) == 0) )
+            if ( runAsConsole )
 			{
 				var lingvisticServer = new LingvisticsServer();
 				lingvisticServer.Start();
@@ -33,8 +36,7 @@ namespace Lingvistics
 			}
 			else
 			{
-				var servicesToRun = new[] { new LingvisticsServer() };
-                ServiceBase.Run( servicesToRun );
+                ServiceBase.Run( new LingvisticsServer() );
 			}
 		}
 	}

@@ -258,7 +258,7 @@ bool CAbbreviationsDictionaryBaseMemory::Reload()
    if( pTable->ScanInit(0, RecMap ) != S_OK )
       SS_THROW( L"Ошибка при инициализации сканирования таблицы Abbreviations" );
 
-   TFormLowerToRecord::const_iterator I;
+   TFormLowerToRecord::iterator I;
 
    while( pTable->Scan() == S_OK )
    {
@@ -266,7 +266,7 @@ bool CAbbreviationsDictionaryBaseMemory::Reload()
 
       I = m_FormLowerToRecord.insert( TFormLowerToRecord::value_type(Record.FormLower, Record) );
       m_DictionaryIndexToRecordPtr.insert( 
-         TDictionaryIndexToRecordPtr::value_type( Record.IDSource, &I->second )
+		  TDictionaryIndexToRecordPtr::value_type( Record.IDSource, &I->second )
       );    
    }
 

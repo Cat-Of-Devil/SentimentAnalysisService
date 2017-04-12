@@ -405,6 +405,7 @@ IncludeExceptionDetailInFaults = true
         }
         #endregion
 
+#if WITH_INPROC_LINGVISTIC
         #region [.4 use only from 'LingvisticsWorkProcess-with-OM-TM'. use as-inprocess in 'LingvisticsWorkProcess-with-OM-TM'.]
         public static TonalityMarkingOutputResult ExecuteTonalityMarkingInprocWithLinguisticService( 
             XDocument rdf, ICoreferenceInfo coreferenceInfo, ObjectAllocateMethod objectAllocateMethod, 
@@ -434,6 +435,7 @@ IncludeExceptionDetailInFaults = true
             #endregion
         }
         #endregion
+#endif
 
         #region [.4 use only Alexey-fusking-playing. use as-inprocess in TM.Wpf2-application.]
         public TonalityMarkingOutputResult TMWpf2AlexeyFuskingPlaying( TonalityMarkingInputParams inputParams )

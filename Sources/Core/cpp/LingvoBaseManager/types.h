@@ -19,7 +19,7 @@ namespace Types
 	/*! \typedef THMSubConnections
 	*  \brief    Описывает карту соответствия между именем типа базы и списком подсоединений
 	*/
-	typedef stdext::hash_map<std::wstring, TLSubConnections> THMSubConnections;
+	typedef std::unordered_map<std::wstring, TLSubConnections> THMSubConnections;
 	/*! \typedef TLConnections
 	*  \brief    Описывает список соединений SQL - группы
 	*/
@@ -27,7 +27,7 @@ namespace Types
 	/*! \typedef THMConnections
 	*  \brief    Описывает карту соответствия между именем типа базы и списком ссылок на указатели на соединение SQL-группы
 	*/
-	typedef stdext::hash_map<std::wstring, TLConnections> THMConnections;
+	typedef std::unordered_map<std::wstring, TLConnections> THMConnections;
 
 	/*! \typedef TLDBMSConnections
 	*  \brief    Описывает список соединений DBMS - группы
@@ -36,7 +36,7 @@ namespace Types
 	/*! \typedef THMDBMSConnections
 	*  \brief    Описывает карту соответствия между именем типа базы и списком ссылок на указатели на соединение DBMS-группы
 	*/
-	typedef stdext::hash_map<std::wstring, TLDBMSConnections> THMDBMSConnections;
+	typedef std::unordered_map<std::wstring, TLDBMSConnections> THMDBMSConnections;
 }
 }
 }

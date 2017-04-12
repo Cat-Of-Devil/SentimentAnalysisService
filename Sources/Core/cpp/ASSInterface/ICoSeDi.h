@@ -438,15 +438,14 @@ class ISemanticClassesWords   {
 /**************************************************************************************************************/		
 
 	#include <set>
-	#include <hash_set>
-//	#include <hash_map>
+	#include <unordered_set>
 	#include <list>
 
 	/// Тип данных : Набор существующих HASH-ключей комбинации
-	typedef stdext::hash_set< UINT32 >                     TSetOfHashKeys;
+	typedef std::unordered_set< UINT32 >                     TSetOfHashKeys;
 
 	/// Тип данных : Итератор для "набора существующих HASH-ключей комбинации"
-	typedef stdext::hash_set< UINT32 >::const_iterator     TSetOfHashKeysItr;
+	typedef std::unordered_set< UINT32 >::const_iterator     TSetOfHashKeysItr;
 
 	/// Тип данных : Морфологический индекс и номер морфо-формы слова
 	struct SSourceAndForm

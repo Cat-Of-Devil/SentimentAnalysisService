@@ -103,7 +103,7 @@ class CTickManager
 public:
 	
 	#pragma warning( disable : 4996 )
-	typedef stdext::hash_map<wstring, CTickMeasure> TTickMeasures;
+	typedef std::unordered_map<wstring, CTickMeasure> TTickMeasures;
 	#pragma warning( default : 4996 )
 
 	CTickManager();

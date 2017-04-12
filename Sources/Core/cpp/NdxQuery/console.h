@@ -100,7 +100,7 @@ public:
 class CTickManager  
 {
 public:
-	typedef stdext::hash_map<wstring, CTickMeasure> TTickMeasures;
+	typedef std::unordered_map<wstring, CTickMeasure> TTickMeasures;
 
 	CTickManager();
 	virtual ~CTickManager();

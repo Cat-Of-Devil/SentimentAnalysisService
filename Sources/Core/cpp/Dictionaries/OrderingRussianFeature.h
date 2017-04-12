@@ -23,7 +23,7 @@ struct SConvertedFeature
 	int iSpecialMorpho;
 };
 
-typedef const std::list<const SConvertedFeature> TConvFeatureList;
+typedef std::list<SConvertedFeature> TConvFeatureList;
 
 
 class COrderingRussianFeature

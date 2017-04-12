@@ -129,10 +129,10 @@ class CAbbreviationsDictionaryBaseMemory: public CAbbreviationsBasic
    };
 
    //ѕредставление в пам€ти таблицы дл€ поиска по FormLower и DictionaryIndex
-   typedef stdext::hash_multimap< std::wstring, SRecord > TFormLowerToRecord;
-   typedef stdext::hash_multimap< INT32, const SRecord * > TDictionaryIndexToRecordPtr;
+   typedef std::unordered_multimap< std::wstring, SRecord > TFormLowerToRecord;
+   typedef std::unordered_multimap< INT32, SRecord * > TDictionaryIndexToRecordPtr;
    //typedef std::multimap< std::wstring, SRecord > TFormLowerToRecord;
-   //typedef std::multimap< INT32, const SRecord * > TDictionaryIndexToRecordPtr;
+   //typedef std::multimap< INT32, SRecord * > TDictionaryIndexToRecordPtr;
 
    typedef std::pair<TFormLowerToRecord::const_iterator, TFormLowerToRecord::const_iterator> TFormToRecordIterPair;
    typedef std::pair<TDictionaryIndexToRecordPtr::const_iterator, TDictionaryIndexToRecordPtr::const_iterator> TDIToRecordPtrIterPair;

@@ -17,8 +17,8 @@
 
 //	STL
 #include <algorithm>
-#include <hash_map>
-#include <hash_set>
+#include <unordered_map>
+#include <unordered_set>
 #include <utility>
 #include <string>
 #include <vector>
@@ -170,7 +170,7 @@ namespace Core{
 				typedef std::vector< TIDForm >                        TIDFormVect;
 				typedef TIDFormVect::const_iterator                   TIDFormItr;
 
-				typedef stdext::hash_map < TIDEnding, TIDFormVect >   TEndingsAndFormsMap;
+				typedef std::unordered_map < TIDEnding, TIDFormVect >   TEndingsAndFormsMap;
 				typedef std::pair        < TIDEnding, TIDFormVect >   TEndingsAndFormsPair;
 				typedef TEndingsAndFormsMap::const_iterator           TEndingsAndFormsItr;
 				typedef std::pair< TEndingsAndFormsItr, bool >        TEndingsAndFormsRet;
@@ -181,7 +181,7 @@ namespace Core{
 					TEndingsAndFormsMap  m_oEndingsAndFormsMap;
 				} TIDTypeInfo;
 
-				typedef stdext::hash_map < TIDType, TIDTypeInfo >     TIDTypeMap;
+				typedef std::unordered_map < TIDType, TIDTypeInfo >     TIDTypeMap;
 				typedef std::pair        < TIDType, TIDTypeInfo >     TIDTypePair;
  				typedef TIDTypeMap::const_iterator                    TIDTypeItr;
 				typedef std::pair< TIDTypeItr, bool >                 TIDTypeRet;

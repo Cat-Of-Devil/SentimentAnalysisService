@@ -122,7 +122,7 @@ class CContainer_HMap_Int_Int   {
 		VOID * Second(VOID)  { return((*_oItr).second); }
 
 
-		typedef stdext::hash_map< INT , VOID * > TMap;
+		typedef std::unordered_map< INT , VOID * > TMap;
 		typedef std::pair< INT , VOID * >        TPair;
 		typedef TMap::iterator                TItr;
 		typedef std::pair<TItr, BOOL>         TRet;

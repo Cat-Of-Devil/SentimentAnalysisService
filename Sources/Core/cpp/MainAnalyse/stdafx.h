@@ -12,7 +12,7 @@
 
 #include <list>
 #include <map>
-#include <hash_map>
+#include <unordered_map>
 
 #include "..\ASCInterface\defines.h"
 USES_LOAD_MANAGER;

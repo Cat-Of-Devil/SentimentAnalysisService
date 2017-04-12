@@ -298,8 +298,8 @@ String^ SS::LinguisticProcessor::CIndexation::GenerateDigest(
 
 	SS::Interface::Core::BlackBox::IObjectDescr* objDescr = this->m_pBlackBoxTextStorage->CreateObjectDescr();
 	
-	array< Char >^ chs = gcnew array< Char >(1); chs[0] = L'\n';
-	array< String^ >^ syn_list = synonims->Split(chs);	
+	cli::array< Char >^ chs = gcnew cli::array< Char >(1); chs[0] = L'\n';
+	cli::array< String^ >^ syn_list = synonims->Split(chs);	
 	for (int i = 0; i < syn_list->Length; i++)
 	{
 		if (syn_list[i]->Length > 1)
@@ -308,7 +308,7 @@ String^ SS::LinguisticProcessor::CIndexation::GenerateDigest(
 		}
 	}
 
-	array< String^ >^ kor_list = korefs->Split(chs);
+	cli::array< String^ >^ kor_list = korefs->Split(chs);
 	for (int i = 0; i < kor_list->Length; i++)
 	{
 		if (kor_list[i]->Length > 1)
@@ -406,10 +406,10 @@ String^ SS::LinguisticProcessor::CIndexation::GenerateHash(String^ entText, Stri
 	wstring str = m_pDigestAnalyser->GetEntityHash(text, m_pText);
  
 	String^ delimStr = gcnew String(";");
-    array< Char >^ delimiter = delimStr->ToCharArray();
+    cli::array< Char >^ delimiter = delimStr->ToCharArray();
 
 	String^ sResult = gcnew String(str.c_str());
-	array< String^ >^ arStr = sResult->Split(delimiter);
+	cli::array< String^ >^ arStr = sResult->Split(delimiter);
 
 	int count1 = HashWordCount(entText);
 	int count2 = 0;
@@ -483,7 +483,7 @@ String^ SS::LinguisticProcessor::CIndexation::GenerateFacts(Generic::List<int>^ 
 	return (sResult);
 }
 
-bool SS::LinguisticProcessor::CIndexation::EndsWithAny(String^ str, array< String^ >^ values)
+bool SS::LinguisticProcessor::CIndexation::EndsWithAny(String^ str, cli::array< String^ >^ values)
 {
 	for (int i = 0; i < values->Length; ++i)
 	{
@@ -495,7 +495,7 @@ bool SS::LinguisticProcessor::CIndexation::EndsWithAny(String^ str, array< Strin
 	return false;
 }
 
-bool SS::LinguisticProcessor::CIndexation::StartsWithAny(String^ str, array< String^ >^ values)
+bool SS::LinguisticProcessor::CIndexation::StartsWithAny(String^ str, cli::array< String^ >^ values)
 {
 	for (int i = 0; i < values->Length; ++i)
 	{
@@ -527,12 +527,12 @@ Generic::List<Linguistics::Core::Entity^>^ SS::LinguisticProcessor::CIndexation:
 	oPretext.m_PartOfSpeechTypes = SS::Core::Features::Values::PartOfSpeechTypes.postOfficial;
 	oPretext.m_OfficialType = SS::Core::Features::Values::OfficialType.otPretext;
 
-	array< String^ >^ endsWithAnyArray = gcnew array< String^ > 
+	cli::array< String^ >^ endsWithAnyArray = gcnew cli::array< String^ > 
 	{
 		"!", "к ответу", "распустить", "долой", "на свалку истории", "всем",
 		"для всех", "да", "к уголовной ответственности", "в отставку", "под суд", "на службу народу", "нет", "в жизнь"
 	};
-	array< String^ >^ startsWithAnyArray = gcnew array< String^ > 
+	cli::array< String^ >^ startsWithAnyArray = gcnew cli::array< String^ > 
 	{
 		"все на", "долой", "за", "против", "нет", "да здравствует", "даешь", "слава", "мы за", "мы против", "прочь",
 		"свободу", "спасите", "позор", "я за", "я против", "хватит", "довольно"
@@ -667,14 +667,14 @@ bool SS::LinguisticProcessor::CIndexation::IsPossibleSlogan(Linguistics::Core::C
 {
 	Generic::IList<TextParsing::Paragraph^>^ paragraphList = Utils::Converter::ToList(slogan->GetParagraphs());
 	int sentenceCount = 0;
-	array< Char >^ chs = gcnew array< Char > {' '};
+	cli::array< Char >^ chs = gcnew cli::array< Char > {' '};
 	for (int i = 0; i < paragraphList->Count; ++i)
 	{
 		TextParsing::Paragraph^ paragraph = paragraphList[i];
 		for (int j = 0; j < paragraph->Sentences->Length; ++j)
 		{
 			++sentenceCount;
-			array< String^ >^ words = ((TextParsing::Sentence^) paragraph->Sentences[j])->Text->Split(chs, StringSplitOptions::RemoveEmptyEntries);			
+			cli::array< String^ >^ words = ((TextParsing::Sentence^) paragraph->Sentences[j])->Text->Split(chs, StringSplitOptions::RemoveEmptyEntries);			
 			if ((words->Length > 10) || (sentenceCount > 3))
 			{
 				return false;
@@ -2158,14 +2158,14 @@ Generic::List<Linguistics::Core::Entity^>^ SS::LinguisticProcessor::CIndexation:
 {
 	if (!content->IsPotencialParentPart)
 	{
-		array< String^ >^ pSentences = content->GetSentencesWithChildrenParts(true);
+		cli::array< String^ >^ pSentences = content->GetSentencesWithChildrenParts(true);
 		List<Linguistics::Core::Entity^>^ result = GetSimpleEntities(pSentences);
 		content->SetEntitiesForContentAndChildren(result, true);
 	}
 	return Utils::Converter::ToList(content->Entities);
 }
 
-Generic::List<Linguistics::Core::Entity^>^ SS::LinguisticProcessor::CIndexation::GetSimpleEntities( array< String^ >^ texts )
+Generic::List<Linguistics::Core::Entity^>^ SS::LinguisticProcessor::CIndexation::GetSimpleEntities( cli::array< String^ >^ texts )
 {
 	Generic::List<Linguistics::Core::Entity^>^ result = gcnew Generic::List<Linguistics::Core::Entity^>( Math::Max( 1, texts->Length ) );
 	
@@ -2184,7 +2184,7 @@ Generic::List<Linguistics::Core::Entity^>^ SS::LinguisticProcessor::CIndexation:
 	return (GetSimpleEntities(m_pSimpleEntitySelector->SelectSimpleEntities(text), textStartPosition));
 }
 
-Generic::List<Linguistics::Core::Entity^>^ SS::LinguisticProcessor::CIndexation::GetSimpleEntities(array< SimpleEntities::SimpleEntity^ >^ entities, int textStartPosition)
+Generic::List<Linguistics::Core::Entity^>^ SS::LinguisticProcessor::CIndexation::GetSimpleEntities(cli::array< SimpleEntities::SimpleEntity^ >^ entities, int textStartPosition)
 {
 	Generic::List<Linguistics::Core::Entity^>^ result = gcnew Generic::List<Linguistics::Core::Entity^>( Math::Max( 1, entities->Length ) );
 	for (int i = 0; i < entities->Length; ++i)

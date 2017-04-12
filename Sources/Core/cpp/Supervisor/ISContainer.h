@@ -19,17 +19,17 @@ using namespace SS::Core::Types::IndexationSearch;
 #include "..\ASCInterface\ICommonServices.h"
 using namespace SS::Interface::Core::CommonServices;
 
-#include <hash_map>
-using namespace stdext;
+#include <unordered_map>
+using namespace std;
 
 /// хэш-мап LoadManager-ов
-typedef hash_map<std::wstring, ILoadManager*> TLoadManagerMap;
+typedef unordered_map<std::wstring, ILoadManager*> TLoadManagerMap;
 /// хэш-мап QueryResults-ов
-typedef hash_map<std::wstring, IQueryResult*> TQueryResultsMap;
+typedef unordered_map<std::wstring, IQueryResult*> TQueryResultsMap;
 /// хэш-мап SearchResults-ов
-typedef hash_map<std::wstring, ISearchResult*> TSearchResultsMap;
+typedef unordered_map<std::wstring, ISearchResult*> TSearchResultsMap;
 /// хэш-мап LinguisticProcessor-ов
-typedef hash_map<std::wstring, ILinguisticProcessor*> TLinguisticProcessorMap;
+typedef unordered_map<std::wstring, ILinguisticProcessor*> TLinguisticProcessorMap;
 
 
 class CISContainer : public IISContainerUM
