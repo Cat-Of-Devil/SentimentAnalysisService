@@ -173,6 +173,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offsets.TonalityMarking.Web
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Offsets.Digest.Web", "..\..\TextMining\Offsets\Offsets.Digest.Web\Offsets.Digest.Web.csproj", "{EAE02436-891E-4A94-B77D-CECFB86B31E3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web.Demo", "Web.Demo", "{F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[lib]", "[lib]", "{A0B4CD8E-82C8-45E1-96B9-7715E4DEF87C}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\TextMining\Web.Demo\[lib]\Newtonsoft.Json.dll = ..\..\TextMining\Web.Demo\[lib]\Newtonsoft.Json.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TonalityMarkingAndDigest.web.demo", "..\..\TextMining\Web.Demo\TonalityMarkingAndDigest.web.demo\TonalityMarkingAndDigest.web.demo.csproj", "{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1093,6 +1102,22 @@ Global
 		{EAE02436-891E-4A94-B77D-CECFB86B31E3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EAE02436-891E-4A94-B77D-CECFB86B31E3}.Release|Win32.ActiveCfg = Release|Any CPU
 		{EAE02436-891E-4A94-B77D-CECFB86B31E3}.Release|x86.ActiveCfg = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|Win32.Build.0 = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Debug|x86.Build.0 = Debug|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Win32.ActiveCfg = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Win32.Build.0 = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|x86.ActiveCfg = Release|Any CPU
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1175,5 +1200,8 @@ Global
 		{2B369FEC-03EB-4D32-BFA7-2AB00917EC56} = {13352DBC-5951-4BA1-91AB-688ECD47F357}
 		{6EF23714-FE4B-4042-89F7-90A87F3195D3} = {13352DBC-5951-4BA1-91AB-688ECD47F357}
 		{EAE02436-891E-4A94-B77D-CECFB86B31E3} = {13352DBC-5951-4BA1-91AB-688ECD47F357}
+		{F3411EA5-7C79-4FCB-BBAF-723CD8B0B997} = {7271E09A-AA0C-4A61-A43E-0B2DA93334E7}
+		{A0B4CD8E-82C8-45E1-96B9-7715E4DEF87C} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
+		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
 	EndGlobalSection
 EndGlobal

@@ -1,15 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Xml;
-using System.Xml.Linq;
-using System.Xml.Xsl;
 
 using OpinionMining;
 using TextMining.Core;

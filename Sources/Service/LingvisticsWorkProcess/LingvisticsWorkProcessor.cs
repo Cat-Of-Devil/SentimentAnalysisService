@@ -156,7 +156,7 @@ namespace Lingvistics
 			}
 
 			var lkc         = GetLinguisticsKernelConroller();
-			var rdfXml      = lkc.GetRDF_New( input.Text, input.AfterSpellChecking, input.BaseDate, (int)input.Mode );
+            var rdfXml      = lkc.GetRDF_New( input.Text, input.AfterSpellChecking, input.BaseDate, (int)input.Mode );
 			var coreference = Config.Default.UseCoreferenceResolution ? _CoreferenceResolver.Process( rdfXml ) : null;
 			var result      = GetResultFromRDF( rdfXml, coreference, input.Options, input.GenerateAllSubthemes );
 

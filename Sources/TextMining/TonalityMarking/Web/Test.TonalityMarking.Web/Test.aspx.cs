@@ -17,8 +17,8 @@ using System.Xml.Linq;
 using System.Xml.XPath;
 
 using TextMining.Core;
-using TonalityMarking;
 using TextMining.Service;
+using TonalityMarking;
 
 namespace Test.TonalityMarking.Web
 {

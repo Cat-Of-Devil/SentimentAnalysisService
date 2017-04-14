@@ -28,6 +28,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -138,7 +139,7 @@
       <Name>TextMining.Service</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Client\TonalityMarking.WcfClient\TonalityMarking.WcfClient.csproj">
-      <Project>{8E89AC82-4C47-4417-8749-B219D927CB83}</Project>
+      <Project>{7504b4c7-0f35-4b9d-92e3-ee2524df4016}</Project>
       <Name>TonalityMarking.WcfClient</Name>
     </ProjectReference>
   </ItemGroup>

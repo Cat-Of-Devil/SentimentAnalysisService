@@ -28,6 +28,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -91,10 +92,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Code\Extensions.cs" />
     <Compile Include="App_Code\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="App_Code\Extensions.cs" />
     <Compile Include="App_Code\OutputTypeEnum.cs" />
     <Compile Include="App_Code\RuleCategory.cs" />
     <Compile Include="ResultXml.aspx.cs">
@@ -133,7 +134,7 @@
       <Name>TextMining.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Client\Digest.WcfClient\Digest.WcfClient.csproj">
-      <Project>{8E89AC82-4C47-4417-8749-B219D927CB83}</Project>
+      <Project>{a51cbd68-e812-4433-990c-5933fcfbce50}</Project>
       <Name>Digest.WcfClient</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Linq;
-using System.Web.UI;
 
-using TextMining.Core;
 using TonalityMarking;
 using OffsetsProcessor = global::OffsetsBases.TonalityMarking.OffsetsProcessor;
 

@@ -28,6 +28,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -107,7 +108,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Core\csharp\Lingvistics.Client\Lingvistics.Client.csproj">
       <Project>{3F51EC37-C4E4-458F-A1BE-C9959D3F6431}</Project>
-      <Name>LingvisticClient %28LingvisticClient\LingvisticClient%29</Name>
+      <Name>Lingvistics.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\TextMining.Core\TextMining.Core.csproj">
       <Project>{F5C8040E-A219-4E32-968D-5A315C11B310}</Project>

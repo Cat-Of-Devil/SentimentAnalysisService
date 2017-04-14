@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -13,9 +11,8 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
-using OpinionMining;
-using TextMining.Core;
 using Digest;
+using TextMining.Core;
 
 namespace Test.Digest.Web
 {

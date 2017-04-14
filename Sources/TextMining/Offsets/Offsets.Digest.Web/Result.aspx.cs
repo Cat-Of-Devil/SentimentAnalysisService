@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Linq;
-using System.Web.UI;
 
-using TextMining.Core;
 using Digest;
+using TextMining.Core;
 using OffsetsProcessor = global::OffsetsBases.Digest.OffsetsProcessor;
 
 namespace Offsets.Digest.Web
