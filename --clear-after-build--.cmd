@@ -1,4 +1,4 @@
-del "*.suo" /S/Q/F/A
+rem del "*.suo" /S/Q/F/A
 del "*.pdb" /S/Q/F/A
 
 for /F %%i in ('dir /A:d /S/B "Sources\Core\cpp\Release*"') do rd /S/Q %%i
