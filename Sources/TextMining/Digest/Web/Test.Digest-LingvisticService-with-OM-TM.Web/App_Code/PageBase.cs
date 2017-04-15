@@ -18,10 +18,6 @@ namespace Test
         protected static readonly Lazy< ILingvisticsServer > _LingvisticsServer = 
             new Lazy< ILingvisticsServer >( () => LingvisticsServer.Create( LINGUISTICS_URL, SERVER_TIMEOUT_IN_SECONDS ), true );
 
-        protected static string ENDPOINT_CONFIGURATION_NAME
-        {
-            get { return (ConfigurationManager.AppSettings[ "ENDPOINT_CONFIGURATION_NAME" ]); }
-        }
         protected static string LINGUISTICS_URL
         {
             get { return (ConfigurationManager.AppSettings[ "LINGUISTICS_URL" ]); }

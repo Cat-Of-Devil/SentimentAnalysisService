@@ -63,15 +63,20 @@ namespace TonalityMarking
             get { return (Negative.HasValue); }
         }
 
+        [NonSerialized]
+        private XElement _Element;
         public XElement Element
         {
-            get;
-            private set;
+            get { return (_Element); }
+            private set { _Element = value; }
         }
+
+        [NonSerialized]
+        private XElement _HomogeneousElement;
         public XElement HomogeneousElement
         {
-            get;
-            private set;
+            get { return (_HomogeneousElement); }
+            private set { _HomogeneousElement = value; }
         }
         public XElement GetHomogeneousElementOrElement()
         {

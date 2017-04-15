@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.ServiceModel;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
@@ -13,8 +11,6 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Xml.XPath;
 
-using OpinionMining;
-using TextMining.Core;
 using Digest;
 using Lingvistics.Client;
 
@@ -147,10 +143,7 @@ namespace Test.Digest.Web
 
             return (lingvisticResult.OpinionMiningWithTonalityResult);
         }
-        protected string ENDPOINT_CONFIGURATION_NAME
-        {
-            get { return (ConfigurationManager.AppSettings[ "ENDPOINT_CONFIGURATION_NAME" ]); }
-        }
+
         protected Stream TestFileContent
         {
             get { return (testFileUpload1.HasFile ? testFileUpload1.FileContent : (testFileUpload2.HasFile ? testFileUpload2.FileContent : null)); }

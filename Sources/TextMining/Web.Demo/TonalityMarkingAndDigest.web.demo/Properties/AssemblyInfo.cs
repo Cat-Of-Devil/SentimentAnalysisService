@@ -5,11 +5,16 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+#if WITH_OM_TM
+[assembly: AssemblyTitle( "TonalityMarkingAndDigest-with-OM-TM.web.demo" )]
+[assembly: AssemblyProduct( "TonalityMarkingAndDigest-with-OM-TM.web.demo" )]
+#else
 [assembly: AssemblyTitle( "TonalityMarkingAndDigest.web.demo" )]
+[assembly: AssemblyProduct( "TonalityMarkingAndDigest.web.demo" )]
+#endif
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("xz")]
-[assembly: AssemblyProduct( "TonalityMarkingAndDigest.web.demo" )]
 [assembly: AssemblyCopyright("Copyright © xz 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -374,13 +374,14 @@ namespace Lingvistics.Client
         {
             Text = text;
 
-            AfterSpellChecking = other.AfterSpellChecking;
-            BaseDate = other.BaseDate;
-            Options = other.Options;
-            Mode = other.Mode;
+            AfterSpellChecking   = other.AfterSpellChecking;
+            BaseDate             = other.BaseDate;
+            Options              = other.Options;
+            Mode                 = other.Mode;
             GenerateAllSubthemes = other.GenerateAllSubthemes;
 #if WITH_OM_TM
             ObjectAllocateMethod = other.ObjectAllocateMethod;
+            TonalityMarkingInput = other.TonalityMarkingInput;
 #endif
         }
 

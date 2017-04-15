@@ -63,7 +63,8 @@ namespace TonalityMarking
             get;
             private set;
         }
-
+        
+        [NonSerialized]
         private XDocument _OutputXDocument;
         public XDocument GetOutputXDocument()
         {

@@ -318,22 +318,22 @@ namespace Lingvistics.Client
         #region [.ILingvisticServer.]
         public string[] GetAllWordForms( string word )
         {
-            return CallLinguisticFunction< string[] >( f => f.GetAllWordForms( word ), ProcessingType.Light );
+            return CallLinguisticFunction( f => f.GetAllWordForms( word ), ProcessingType.Light );
         }
 
         public Tuple< string[], string[] > GetAllWordFormsWithPartsOfSpeech( string word )
         {
-            return CallLinguisticFunction< Tuple< string[], string[] > >( f => f.GetAllWordFormsWithPartsOfSpeech( word ), ProcessingType.Light );
+            return CallLinguisticFunction( f => f.GetAllWordFormsWithPartsOfSpeech( word ), ProcessingType.Light );
         }
 
         public string GetNormalWordForm( string word )
         {
-            return CallLinguisticFunction<string>( f => f.GetNormalWordForm( word ), ProcessingType.Light );
+            return CallLinguisticFunction( f => f.GetNormalWordForm( word ), ProcessingType.Light );
         }
 
         public string[] GetAllNormalWordForm( string word )
         {
-            return CallLinguisticFunction< string[] >( f => f.GetAllNormalWordForm( word ), ProcessingType.Light );
+            return CallLinguisticFunction( f => f.GetAllNormalWordForm( word ), ProcessingType.Light );
         }
 
         public LingvisticsResult ProcessText( string                   text, 
@@ -343,25 +343,25 @@ namespace Lingvistics.Client
                                               SelectEntitiesMode       mode                 = SelectEntitiesMode.Full,
                                               bool                     generateAllSubthemes = false )
         {
-            return CallLinguisticFunction< LingvisticsResult >( f => f.ProcessText( text, afterSpellChecking, baseDate, options, mode, generateAllSubthemes ), ProcessingType.Heavy );
+            return CallLinguisticFunction( f => f.ProcessText( text, afterSpellChecking, baseDate, options, mode, generateAllSubthemes ), ProcessingType.Heavy );
         }
         public LingvisticsResult ProcessText( LingvisticsTextInput input )
         {
-            return CallLinguisticFunction< LingvisticsResult >( f => f.ProcessText( input ), ProcessingType.Heavy );
+            return CallLinguisticFunction( f => f.ProcessText( input ), ProcessingType.Heavy );
         }
 
         public PTSResult ProcessPTS( string xml, bool buildSemanticNetwork, string language )
         {
-            return CallLinguisticFunction< PTSResult >( f => f.ProcessPTS( xml, buildSemanticNetwork, language ), ProcessingType.Heavy );
+            return CallLinguisticFunction( f => f.ProcessPTS( xml, buildSemanticNetwork, language ), ProcessingType.Heavy );
         }
 
         public LingvisticsResult ProcessRDF( string rdf, LingvisticsResultOptions options, bool generateAllSubthemes = false )
         {
-            return CallLinguisticFunction< LingvisticsResult >( f => f.ProcessRDF( rdf, options, generateAllSubthemes ), ProcessingType.Light );
+            return CallLinguisticFunction( f => f.ProcessRDF( rdf, options, generateAllSubthemes ), ProcessingType.Light );
         }
         public LingvisticsResult ProcessRDF( LingvisticsRDFInput input )
         {
-            return CallLinguisticFunction< LingvisticsResult >( f => f.ProcessRDF( input ), ProcessingType.Light );
+            return CallLinguisticFunction( f => f.ProcessRDF( input ), ProcessingType.Light );
         }
         #endregion
     }
