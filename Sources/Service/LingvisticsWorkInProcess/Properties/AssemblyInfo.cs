@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("LingvisticsWorkProcess")]
+[assembly: AssemblyTitle("LingvisticsWorkInProcess")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("XZ")]
-[assembly: AssemblyProduct("LingvisticsWorkProcess")]
-[assembly: AssemblyCopyright("Copyright © XZ 2016")]
+[assembly: AssemblyProduct("LingvisticsWorkInProcess")]
+[assembly: AssemblyCopyright("Copyright © XZ 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -33,11 +34,3 @@ using System.Runtime.InteropServices;
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: log4net.Config.XmlConfigurator(ConfigFile="LingvisticsWorkProcess.log4net.xml", Watch=true )]
-/*
-#if WITH_OM_TM
-[assembly: log4net.Config.XmlConfigurator(ConfigFile="LingvisticsWorkProcess-with-OM-TM.log4net.xml", Watch=true )]
-#else
-[assembly: log4net.Config.XmlConfigurator(ConfigFile="LingvisticsWorkProcess.log4net.xml", Watch=true)]
-#endif
-*/

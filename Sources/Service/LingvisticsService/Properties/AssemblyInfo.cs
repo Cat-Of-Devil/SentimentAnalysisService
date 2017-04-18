@@ -35,4 +35,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 
-[assembly: log4net.Config.XmlConfigurator(ConfigFile = "LingvisticsServer.log4net.xml", Watch = true)]
+[assembly: log4net.Config.XmlConfigurator(ConfigFile="LingvisticsServer.log4net.xml", Watch=true)]
+/*
+#if WITH_OM_TM
+[assembly: log4net.Config.XmlConfigurator(ConfigFile="LingvisticsServer-with-OM-TM.log4net.xml", Watch=true)]
+#else
+[assembly: log4net.Config.XmlConfigurator(ConfigFile="LingvisticsServer.log4net.xml", Watch=true)]
+#endif
+*/

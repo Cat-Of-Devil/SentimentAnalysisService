@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{258BB8FE-BCF0-4FFE-B8D1-02F53E211BE2}</ProjectGuid>
+    <ProjectGuid>{96F1B7D8-F944-4932-BD03-4BD992F06DB6}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Lingvistics</RootNamespace>
-    <AssemblyName>LingvisticsWorkProcess-with-OM-TM</AssemblyName>
+    <AssemblyName>LingvisticsWorkProcess</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -20,8 +20,6 @@
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
     <UpgradeBackupLocation />
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <TargetFrameworkProfile />
     <PublishUrl>http://localhost/LingvisticProcess/</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Web</InstallFrom>
@@ -34,15 +32,17 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Bin-with-OM-TM\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WITH_OM_TM</DefineConstants>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>false</UseVSHostingProcess>
@@ -51,17 +51,16 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Bin-with-OM-TM\</OutputPath>
-    <DefineConstants>TRACE;WITH_OM_TM</DefineConstants>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\..\..\[exec]\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;WITH_OM_TM</DefineConstants>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>full</DebugType>
     <PlatformTarget>x86</PlatformTarget>
     <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
@@ -72,7 +71,7 @@
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>..\..\..\[exec]\</OutputPath>
-    <DefineConstants>TRACE;WITH_OM_TM</DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>x86</PlatformTarget>
@@ -83,7 +82,8 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net">
+    <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\[libraries]\log4net\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -91,7 +91,6 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Runtime.Remoting" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -102,7 +101,11 @@
     <Compile Include="LOG.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -123,46 +126,37 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Core\cpp_cli\LinguisticsKernel\LinguisticsKernel.vcxproj">
-      <Project>{a1470706-2feb-41d4-aa8d-b59025414216}</Project>
+      <Project>{2035b1d5-7979-4451-bb33-6886be24395f}</Project>
       <Name>LinguisticsKernel</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\csharp\CoreferenceResolving\CoreferenceResolving.csproj">
-      <Project>{0c3c7777-9d3b-4fc3-b57b-cb39f4d758b7}</Project>
+      <Project>{11528BC6-CA83-452D-9180-6D19F555FE7C}</Project>
       <Name>CoreferenceResolving</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Core\csharp\Lingvistics.Client\Lingvistics.Client-with-OM-TM.csproj">
-      <Project>{5c93bd69-ce81-48e8-9d8c-00c36917dc5d}</Project>
-      <Name>Lingvistics.Client-with-OM-TM</Name>
+    <ProjectReference Include="..\..\Core\csharp\Lingvistics.Client\Lingvistics.Client.csproj">
+      <Project>{3f51ec37-c4e4-458f-a1be-c9959d3f6431}</Project>
+      <Name>Lingvistics.Client</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Core\csharp\Lingvistics.Types\Lingvistics.Types.csproj">
-      <Project>{9a1890dc-37d1-4784-97de-690fd50b029d}</Project>
+      <Project>{9A1890DC-37D1-4784-97DE-690FD50B029D}</Project>
       <Name>Lingvistics.Types</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\TextMining\Digest\Implementation\Digest.WcfService\Digest.WcfService-inproc-Lingvistic.csproj">
-      <Project>{6DFDCA7E-431D-41EA-9DAB-51C3C1AAB49F}</Project>
-      <Name>Digest.WcfService-inproc-Lingvistic</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\TextMining\TonalityMarking\Implementation\TonalityMarking.WcfService\TonalityMarking.WcfService-inproc-Lingvistic.csproj">
-      <Project>{5cc141d3-6839-4b92-a3a3-da45e2427384}</Project>
-      <Name>TonalityMarking.WcfService-inproc-Lingvistic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\Settings.settings" />
-    <None Include="with-OM-TM\App.config">
+    <None Include="App.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="LingvisticsWorkProcess.log4net.xml" />
+    <Content Include="LingvisticsWorkProcess.log4net.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>echo:
-echo ------------ Copy Dictionaries Files ------------
-xcopy "$(ProjectDir)..\..\TextMining\OpinionMining\Dictionaries" "$(ProjectDir)..\..\..\[exec]\OMTM-Dictionaries\OM" /H/E/I/Y
-xcopy "$(ProjectDir)..\..\TextMining\TonalityMarking\Dictionaries" "$(ProjectDir)..\..\..\[exec]\OMTM-Dictionaries\TM" /H/E/I/Y</PostBuildEvent>
-  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
