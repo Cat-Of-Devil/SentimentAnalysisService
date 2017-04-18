@@ -103,7 +103,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AntiBotHelper.cs" />
+    <Compile Include="App_Code\Extensions.cs" />
+    <Compile Include="App_Code\Config.cs" />
+    <Compile Include="App_Code\AntiBotHelper.cs" />
     <Compile Include="Captcha.aspx.cs">
       <DependentUpon>Captcha.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
