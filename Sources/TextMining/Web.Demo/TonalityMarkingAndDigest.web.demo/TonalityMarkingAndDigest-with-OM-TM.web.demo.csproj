@@ -56,8 +56,10 @@
       <HintPath>..\[lib]\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Xml.Linq" />
@@ -109,10 +111,6 @@
     <Compile Include="Captcha.aspx.designer.cs">
       <DependentUpon>Captcha.aspx</DependentUpon>
     </Compile>
-    <Compile Include="captcha\AntiBot.cs" />
-    <Compile Include="captcha\CaptchaControl.cs" />
-    <Compile Include="captcha\CaptchaImage.cs" />
-    <Compile Include="CaptchaImageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RESTProcessHandler.ashx.cs">
       <DependentUpon>RESTProcessHandler.ashx</DependentUpon>
@@ -128,6 +126,10 @@
     <ProjectReference Include="..\..\..\Core\csharp\Lingvistics.Client\Lingvistics.Client-with-OM-TM.csproj">
       <Project>{5c93bd69-ce81-48e8-9d8c-00c36917dc5d}</Project>
       <Name>Lingvistics.Client-with-OM-TM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\[lib]\Captcha\captcha.csproj">
+      <Project>{c781afbc-1fc6-47dc-90e0-5817dede25db}</Project>
+      <Name>captcha</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Captcha.aspx.cs" Inherits="captcha.Captcha" %>
 
-<%@ Register Assembly="TonalityMarkingAndDigest.web.demo" Namespace="captcha" TagPrefix="captcha" %>
+<%@ Register Assembly="captcha" Namespace="captcha" TagPrefix="captcha" %>
 
 <!DOCTYPE html>
 

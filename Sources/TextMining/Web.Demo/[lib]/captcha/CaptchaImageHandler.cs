@@ -4,9 +4,16 @@ using System.Web;
 
 namespace captcha
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class CaptchaImageHandler : IHttpHandler
     {
-        // Methods
+        public bool IsReusable
+        {
+            get { return (true); }
+        }
+
         public void ProcessRequest( HttpContext context )
         {
             HttpApplication applicationInstance = context.ApplicationInstance;
@@ -46,12 +53,6 @@ namespace captcha
                 applicationInstance.Response.StatusCode = 200;
                 context.ApplicationInstance.CompleteRequest();
             }
-        }
-
-        // Properties
-        public bool IsReusable
-        {
-            get { return (true); }
         }
     }
 }

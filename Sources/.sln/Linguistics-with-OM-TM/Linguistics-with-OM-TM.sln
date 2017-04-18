@@ -153,6 +153,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[lib]", "[lib]", "{45DD24BC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TonalityMarkingAndDigest-with-OM-TM.web.demo", "..\..\TextMining\Web.Demo\TonalityMarkingAndDigest.web.demo\TonalityMarkingAndDigest-with-OM-TM.web.demo.csproj", "{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "captcha", "..\..\TextMining\Web.Demo\[lib]\Captcha\captcha.csproj", "{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -978,6 +980,22 @@ Global
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Win32.Build.0 = Release|Any CPU
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|x86.ActiveCfg = Release|Any CPU
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|x86.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Win32.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|x86.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Win32.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Win32.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1053,5 +1071,6 @@ Global
 		{4A62A861-99C4-43D8-9C47-9A004D7337E7} = {4CF313AA-1375-4210-ADB1-B1563F3CA0AD}
 		{45DD24BC-A772-4AB9-AE1D-3BE50DBCD20C} = {4A62A861-99C4-43D8-9C47-9A004D7337E7}
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368} = {4A62A861-99C4-43D8-9C47-9A004D7337E7}
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB} = {45DD24BC-A772-4AB9-AE1D-3BE50DBCD20C}
 	EndGlobalSection
 EndGlobal
