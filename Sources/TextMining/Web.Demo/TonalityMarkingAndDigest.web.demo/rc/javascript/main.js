@@ -115,17 +115,17 @@
                 splitBySentences: bySentencesView
             },
             success: function (responce) {
-                if (responce.err) {
-                    if (responce.err == "goto-on-captcha") {
+                if (responce.error) {
+                    if (responce.error == "goto-on-captcha") {
                         window.location.href = "Captcha.aspx";
                     } else {
                         processing_end();
-                        $('.result-info').addClass('error').text(responce.err);
+                        $('.result-info').addClass('error').text(responce.error);
                     }
                 } else {
                     if (responce.html) {
                         $('.result-info').removeClass('error').text('');
-                        $('#processResult tbody').html(responce.html);
+                        $('#processResult').append(responce.html).append('<div style="font-size: x-small; text-align: right; color: gray;">elapsed: ' + responce.elapsed + '</div>');
                         $('.result-info').hide();
                         processing_end();
                     } else {
@@ -148,7 +148,7 @@
         $('#text').addClass('no-change').attr('readonly', 'readonly').attr('disabled', 'disabled');
         $('.result-info').show().removeClass('error').html('Идет обработка... <label id="processingTickLabel"></label>');
         $('#processButton').addClass('disabled');
-        $('#processResult tbody').empty();
+        $('#processResult').empty();
         setTimeout(processing_tick, 1000);
     };
     function processing_end(){

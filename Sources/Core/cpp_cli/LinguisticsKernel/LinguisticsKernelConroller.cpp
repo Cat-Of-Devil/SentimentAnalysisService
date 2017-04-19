@@ -66,7 +66,8 @@ void LinguisticsKernelConroller::Close()
 {
 }
 
-LinguisticsKernelConroller::LinguisticsKernelConroller(void) : m_pTreeGenerator(nullptr), m_bIsInside(true)
+LinguisticsKernelConroller::LinguisticsKernelConroller(bool useGeoNamesDictionary, int maxEntityLength)
+	: m_pTreeGenerator(nullptr), m_bIsInside(true)
 {
 	SS_TRY
 	{
@@ -100,7 +101,7 @@ LinguisticsKernelConroller::LinguisticsKernelConroller(void) : m_pTreeGenerator(
 		m_pILoadManager->SetWorkPath(path);
 /// конец загрузки лоад манагера
 
-		Init();
+		Init(useGeoNamesDictionary, maxEntityLength);
 
         Marshal::FreeHGlobal(System::IntPtr((void*)module));
         Marshal::FreeHGlobal(System::IntPtr((void*)path));
@@ -110,7 +111,7 @@ LinguisticsKernelConroller::LinguisticsKernelConroller(void) : m_pTreeGenerator(
 	SS_CATCH(L"")
 }
 
-void LinguisticsKernelConroller::Init()
+void LinguisticsKernelConroller::Init(bool useGeoNamesDictionary, int maxEntityLength)
 {
 	SS_TRY
 	{
@@ -182,7 +183,12 @@ void LinguisticsKernelConroller::Init()
 		m_pSurfaceSyntaxAnalyzer = gcnew SurfaceSyntaxAnalyzer::SurfaceSyntaxAnalyzer();
 		m_pAbbreviationResolver = gcnew CoreferenceResolving::AbbreviationResolver();
 		m_pSemanticNetwork = gcnew SemanticResolution::SemanticNetwork();
-		SetConfigurationParams();
+
+		m_pIndexation->SetEntityMaxLength(maxEntityLength);
+		_IsUseGeoNamesDict = useGeoNamesDictionary;
+		/*--- [DO NOT USE IT. THIS IS A VERY BAD IDEA]
+			SetConfigurationParams();
+		*/
 		LoadDictionaries();
  
 		m_pTreeComparator = gcnew CTreeComparator();
@@ -190,6 +196,7 @@ void LinguisticsKernelConroller::Init()
 	SS_CATCH(L"")
 }
 
+/*--- [DO NOT USE IT. THIS IS A VERY BAD IDEA]
 void LinguisticsKernelConroller::SetConfigurationParams()
 {
 	using namespace System::Configuration;
@@ -202,6 +209,7 @@ void LinguisticsKernelConroller::SetConfigurationParams()
 
 	_IsUseGeoNamesDict = (L"True" == section[ gcnew String("UseGeoNamesDictionary") ]->ToString());
 }
+---*/
 
 void LinguisticsKernelConroller::LoadDictionaries()
 {

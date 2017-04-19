@@ -270,7 +270,7 @@ namespace captcha
         public void SendGotoOnCaptchaJsonResponse()
         {
             _Config.HttpContext.Response.ContentType = "application/json";
-            _Config.HttpContext.Response.Write( "{ \"err\": \"goto-on-captcha\" }" );
+            _Config.HttpContext.Response.Write( "{ \"error\": \"goto-on-captcha\" }" );
             //_Config.HttpContext.Response.End();
         }
     }

@@ -62,7 +62,7 @@ namespace Lingvistics
         private static void WorkThreadRoutine()
         {
 //System.Diagnostics.Debugger.Break();
-            _LinguisticsKernelConroller = new LinguisticsKernelConroller();
+            _LinguisticsKernelConroller = new LinguisticsKernelConroller( Config.Default.UseGeoNamesDictionary, Config.Default.MaxEntityLength );
 
             while ( !_StopEvent.WaitOne( 1000 ) )
             {

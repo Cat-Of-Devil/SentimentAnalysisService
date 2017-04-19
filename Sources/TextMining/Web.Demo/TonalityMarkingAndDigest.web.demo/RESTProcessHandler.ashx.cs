@@ -25,7 +25,7 @@ using Lingvistics.Client;
 namespace TonalityMarkingAndDigest.web.demo
 {
     /// <summary>
-    /// Summary description for RESTProcessHandler
+    /// 
     /// </summary>
     public sealed class RESTProcessHandler : IHttpHandler
     {
@@ -36,15 +36,16 @@ namespace TonalityMarkingAndDigest.web.demo
         {
             public Result( Exception ex ) 
             {
-                ExceptionMessage = ex.ToString();
+                ErrorMessage = ex.ToString();
             }
-            public Result( string html )
+            public Result( string html, TimeSpan elapsed )
             {
-                Html = html;
+                Html    = html;
+                Elapsed = elapsed;
             }
 
-            [JsonProperty(PropertyName="err")]
-            public string ExceptionMessage
+            [JsonProperty(PropertyName="error")]
+            public string ErrorMessage
             {
                 get;
                 private set;
@@ -52,6 +53,13 @@ namespace TonalityMarkingAndDigest.web.demo
 
             [JsonProperty(PropertyName="html")]
             public string Html
+            {
+                get;
+                private set;
+            }
+
+            [JsonProperty(PropertyName="elapsed")]
+            public TimeSpan Elapsed
             {
                 get;
                 private set;
@@ -193,9 +201,11 @@ namespace TonalityMarkingAndDigest.web.demo
                 antiBot.MarkRequestEx( lp.Text );
                 #endregion
 
+                var sw = Stopwatch.StartNew();
                 var html = GetResultHtml( lp );
+                sw.Stop();
 
-                context.Response.SendJson( html ); 
+                context.Response.SendJson( html, sw.Elapsed ); 
             }
             catch ( Exception ex )
             {
@@ -445,9 +455,9 @@ namespace TonalityMarkingAndDigest.web.demo
         }
 
 
-        public static void SendJson( this HttpResponse response, string html )
+        public static void SendJson( this HttpResponse response, string html, TimeSpan elapsed )
         {
-            response.SendJson( new RESTProcessHandler.Result( html ) );
+            response.SendJson( new RESTProcessHandler.Result( html, elapsed ) );
         }
         public static void SendJson( this HttpResponse response, Exception ex )
         {

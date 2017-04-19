@@ -76,7 +76,7 @@ namespace LinguisticsKernel
 			bool bSynonyms;
 		};
 
-		LinguisticsKernelConroller(void);
+		LinguisticsKernelConroller(bool useGeoNamesDictionary, int maxEntityLength);
 		~LinguisticsKernelConroller(void);
 
 		void Close();
@@ -155,7 +155,7 @@ namespace LinguisticsKernel
 			(String^ xml, bool isFullRDF, String^ language);
 
 	protected:
-		void Init();
+		void Init(bool useGeoNamesDictionary, int maxEntityLength);
 		/// заполняем результаты поиска
 		void FillDataSet(SS::Interface::Core::CommonContainers::ISearchResult* pSearchResult, DataSet^% pResultDataSet, ArrayList^% pArrayList);
 
@@ -163,7 +163,9 @@ namespace LinguisticsKernel
         void LoadDictionaries();
 
 		/// установка значений из конфигурационного файла
+		/*--- [DO NOT USE IT. THIS IS A VERY BAD IDEA]
 		void SetConfigurationParams();
+		---*/
 
         /// загрузка служебного словаря
         void LoadDictionary(wstring path, vector<vector<wstring>> &dictionaryCollection);

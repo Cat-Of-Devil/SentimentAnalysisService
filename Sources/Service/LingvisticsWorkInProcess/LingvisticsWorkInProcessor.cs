@@ -29,23 +29,33 @@ namespace Lingvistics
     /// <summary>
     /// 
     /// </summary>
-	public sealed class LingvisticsWorkInProcessor : ILingvisticsProcessor
+	public sealed class LingvisticsWorkInProcessor : ILingvisticsProcessor, IDisposable
 	{
         #region [.ctor().]
         private CoreferenceResolver        _CoreferenceResolver;
         private LinguisticsKernelConroller _LinguisticsKernelConroller;
 
-        public LingvisticsWorkInProcessor( bool useCoreferenceResolution )
+        public LingvisticsWorkInProcessor( bool useCoreferenceResolution, bool useGeoNamesDictionary, int maxEntityLength )
         {
             _CoreferenceResolver        = (useCoreferenceResolution) ? new CoreferenceResolver() : null;
-            _LinguisticsKernelConroller = new LinguisticsKernelConroller();
-        } 
+            _LinguisticsKernelConroller = new LinguisticsKernelConroller( useGeoNamesDictionary, maxEntityLength );
+        }
+        public void Dispose()
+        {
+            Close();
+        }
         #endregion
 
         #region [.ILingvisticProcessor.]
         public void Close()
 		{
-		}
+            _CoreferenceResolver = null;
+            if ( _LinguisticsKernelConroller != null )
+            {
+                _LinguisticsKernelConroller.Dispose();
+                _LinguisticsKernelConroller = null;
+            }
+        }
 		#endregion
 
 		#region [.ILingvisticServer.]
@@ -242,7 +252,8 @@ namespace Lingvistics
             {
                 entList = entList.Where( t => t.Parent.Name == NodeName.SUB_SENT.ToString() );
             }
-            return entList.Select( xe =>
+
+            return entList.Select( xe => 
                 {
                     if ( !lkc.IsTheme( xe ) ) return (null);
                     EntityType entType;
@@ -257,13 +268,16 @@ namespace Lingvistics
                     }
                     return (new { Name = name, Type = entType, Role = GetAttr( xe, BlockAttribute.ROLE ) });
                 }
-            ).Where( t => t != null ).GroupBy( t => new { Name = t.Name.ToUpper(), Type = t.Type } ).Select( (gr, idx) =>
+            )
+            .Where( t => t != null )
+            .GroupBy( t => new { Name = t.Name.ToUpper(), Type = t.Type } )
+            .Select( (gr, idx) =>
                 {
                     var adj   = EntityRole.Adj  .ToString();
                     var subj  = EntityRole.Subj .ToString();
                     var obj   = EntityRole.Obj  .ToString();
                     var other = EntityRole.Other.ToString();
-                    return new ThemeItem()
+                    return (new ThemeItem()
                     {
                         ID        = idx,
                         Name      = gr.First().Name,
@@ -272,14 +286,14 @@ namespace Lingvistics
                         FreqSubj  = gr.Count( t => t.Role == subj  ),
                         FreqObj   = gr.Count( t => t.Role == obj   ),
                         FreqOther = gr.Count( t => t.Role == other ),
-                    };
+                    });
                 }
             ).ToArray();
 		}
         private static LinkItem[]  GetLinkList( IEnumerable< Lingvistics.Types.LinkItem > linkList )
 		{
-			return linkList.Select(t =>
-				{
+            return linkList.Select( t =>
+                 {
 					return (new LinkItem()
 					{
 						SourceThemeID = t.SourceThemeID,
@@ -313,5 +327,5 @@ namespace Lingvistics
 			return (result);
 		}
 #endif
-	}
+    }
 }
