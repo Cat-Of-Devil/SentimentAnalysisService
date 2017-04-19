@@ -11,14 +11,15 @@ namespace Linguistics.Core
     public class TextContent
     {
         /// <summary>
-        /// Выделитель дочерних контентов
-        /// </summary>
-        private static ChildContentSelector _selector = new ChildContentSelector();
-
-        /// <summary>
         /// Парсер текста
         /// </summary>
         public static TextParsing.TextParser Parser { get; set; }
+
+        /// <summary>
+        /// Выделитель дочерних контентов
+        /// </summary>
+        //---WTF ?!---// 
+        private static ChildContentSelector _selector = new ChildContentSelector();        
 
         /// <summary>
         /// Базовая дата для относительных дат

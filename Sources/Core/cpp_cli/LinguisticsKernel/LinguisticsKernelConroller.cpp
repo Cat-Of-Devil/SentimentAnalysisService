@@ -76,12 +76,16 @@ LinguisticsKernelConroller::LinguisticsKernelConroller(bool useGeoNamesDictionar
 
 /// загрузка лоад манагера
 		String^ sPath =  System::Reflection::Assembly::GetExecutingAssembly()->CodeBase;
+//---System::Diagnostics::Debug::WriteLine(sPath);
 		int idx = sPath->IndexOf( L"///" );
-		sPath = sPath->Substring(idx + 3, sPath->Length - idx - 3);
+		if (idx != -1)
+		{
+			sPath = sPath->Substring(idx + 3, sPath->Length - idx - 3);
+		}		
 		sPath = System::IO::Path::GetDirectoryName(sPath);	
-
+//---System::Diagnostics::Debug::WriteLine(sPath);
 		String^ sModule = (gcnew System::IO::FileInfo( System::IO::Path::Combine(sPath, gcnew String(LOADMANAGER_DLL_PATH)) ))->FullName;
-			
+//---System::Diagnostics::Debug::WriteLine(sModule);
 		const wchar_t* module = (const wchar_t*)(Marshal::StringToHGlobalUni(sModule)).ToPointer();
 		const wchar_t* path   = (const wchar_t*)(Marshal::StringToHGlobalUni(sPath  )).ToPointer();
 
@@ -95,7 +99,7 @@ LinguisticsKernelConroller::LinguisticsKernelConroller(bool useGeoNamesDictionar
 
 		const GUID Guid = CLSID_LoadManager;
 		(*pfnCreateInstance)(&Guid, (void**) &m_pILoadManager);
-
+//---System::Diagnostics::Debug::WriteLine(gcnew IntPtr( m_pILoadManager ));
 		SetLoadManager(m_pILoadManager);
 
 		m_pILoadManager->SetWorkPath(path);

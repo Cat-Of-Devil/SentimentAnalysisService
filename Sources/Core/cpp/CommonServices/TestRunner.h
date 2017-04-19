@@ -22,8 +22,8 @@ public:
    RELEASE_IMPL()
 
 	BEGIN_QI_MAP()
-		QI_MAP_INHERIT_ENTRY( IID_TestRunner, Interface::UnitTests::ITestRunner )
-      QI_MAP_INHERIT_ENTRY( IID_Base, Interface::IBase )
+	 QI_MAP_INHERIT_ENTRY( IID_TestRunner, Interface::UnitTests::ITestRunner )
+     QI_MAP_INHERIT_ENTRY( IID_Base, Interface::IBase )
 	END_QI_MAP()
 };
 

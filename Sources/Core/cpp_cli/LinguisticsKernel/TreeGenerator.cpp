@@ -8,6 +8,7 @@ namespace LinguisticsKernel
 {
 CTreeGenerator::CTreeGenerator(SS::Interface::Core::ResourceManagers::ILoadManager* pLoadManager)
 {
+//---System::Diagnostics::Debug::WriteLine(gcnew System::IntPtr(pLoadManager));
 	m_pStringService = gcnew CStringService();
 	m_pAMConverter = 
 		(SS::Interface::Core::AMConverter::IAMConverterMorpho*)

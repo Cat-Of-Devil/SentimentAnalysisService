@@ -17,7 +17,7 @@
 
     <appender name="RollingFileAppender" type="log4net.Appender.RollingFileAppender">
       <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
-      <file value="Logs\\om-" />
+      <file value="(logs)\\om-" />
       <appendToFile value="true" />
       <rollingStyle value="Date" />
       <datePattern value="yyyyMMdd.\tx\t" />
@@ -36,7 +36,7 @@
 
     <appender name="RollingFileAppenderError" type="log4net.Appender.RollingFileAppender">
       <lockingModel type="log4net.Appender.FileAppender+MinimalLock" />
-      <file value="Logs\\om-error-" />
+      <file value="(logs)\\om-error-" />
       <appendToFile value="true" />
       <rollingStyle value="Date" />
       <datePattern value="yyyyMMdd.\tx\t" />

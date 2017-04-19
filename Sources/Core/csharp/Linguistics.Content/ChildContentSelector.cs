@@ -49,16 +49,19 @@ namespace Linguistics.Core
 			public int Position { get; set; }
 		}
 
-		private static Dictionary<ChildContentSelectorMode, ContentSelectorBase[]> _selectorsDictionary;
-		/// <summary>
-		/// Выделители дочерних контентов
-		/// </summary>
-		private static ContentSelectorBase[] _selectors;
+        //---WTF ?!---// 
+        private static Dictionary<ChildContentSelectorMode, ContentSelectorBase[]> _selectorsDictionary;
+        /// <summary>
+        /// Выделители дочерних контентов
+        /// </summary>
+        //---WTF ?!---// 
+        private static ContentSelectorBase[] _selectors;
 
-		/// <summary>
-		/// Индекс текущего выделителя дочерних контентов
-		/// </summary>
-		private static int _currentSelectorIndex;
+        /// <summary>
+        /// Индекс текущего выделителя дочерних контентов
+        /// </summary>
+        //---WTF ?!---// 
+        private static int _currentSelectorIndex;
 
 		/// <summary>
 		/// Выделенные контенты

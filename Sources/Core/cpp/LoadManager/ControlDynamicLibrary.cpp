@@ -112,9 +112,10 @@ HMODULE CControlDynamicLibrary::GetLibrary(wstring sNameLibrary, const wchar_t* 
 
 	if ( m_mNameLibrary_HModule.count(sNameLibrary) )
 	{
-		return m_mNameLibrary_HModule[sNameLibrary];
+		return (m_mNameLibrary_HModule[sNameLibrary]);
 	}
 
+	wstring wsTemp;
 	const wchar_t* wszLibraryPath;
 	if ( FileExists(sNameLibrary.c_str()) )
 	{
@@ -123,8 +124,7 @@ HMODULE CControlDynamicLibrary::GetLibrary(wstring sNameLibrary, const wchar_t* 
 	else
 	{
 		SS::Core::CommonServices::CWorkRegister oWorkRegister;
-		std::wstring wsTemp = oWorkRegister.GetParameter(L"WorkPath", wszPath);
-
+		wsTemp = oWorkRegister.GetParameter(L"WorkPath", wszPath);
 		wsTemp += sNameLibrary;
 
 		wszLibraryPath = wsTemp.c_str();
@@ -132,7 +132,18 @@ HMODULE CControlDynamicLibrary::GetLibrary(wstring sNameLibrary, const wchar_t* 
 
 	HMODULE hModule = LoadLibrary(wszLibraryPath);
 
-	if( hModule == NULL )
+	if ( hModule == NULL )
+	{
+		SS::Core::CommonServices::CWorkRegister oWorkRegister;
+		wsTemp = oWorkRegister.GetParameter(L"WorkPath", wszPath);
+		wsTemp += sNameLibrary;
+
+		wszLibraryPath = wsTemp.c_str();
+
+		hModule = LoadLibrary(wszLibraryPath);
+	}	
+
+	if ( hModule == NULL )
 	{
 		SAVE_LOG(L"ћодуль " AND wszLibraryPath AND L" не загружаетс€, возможно его просто нет");
 		//SS_THROW("ћодуль " AND wszLibraryPath AND " не загружаетс€, возможно его просто нет");
@@ -140,7 +151,7 @@ HMODULE CControlDynamicLibrary::GetLibrary(wstring sNameLibrary, const wchar_t* 
 
 	m_mNameLibrary_HModule.insert(MNameLibrary_HModule::value_type(wszLibraryPath, hModule));
 	
-	return hModule;
+	return (hModule);
 }
 
 BOOL CControlDynamicLibrary::FreeLibrary(wstring sNameLibrary)
