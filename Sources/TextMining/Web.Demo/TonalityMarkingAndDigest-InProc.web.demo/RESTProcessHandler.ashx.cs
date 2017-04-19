@@ -10,6 +10,7 @@ using System.Xml.Linq;
 using System.Xml.Xsl;
 
 using Newtonsoft.Json;
+using log4net;
 using captcha;
 using Digest;
 using Lingvistics.Client;
@@ -97,6 +98,11 @@ namespace TonalityMarkingAndDigestInProc.web.demo
             public OutputTypeEnum OutputType { get; set; }
             public string InquiryText { get; set; }
             public ObjectAllocateMethod? ObjectAllocateMethod { get; set; }
+
+            public bool TextIsDummy
+            {
+                get { return (Text == "_dummy_"); }
+            }
         }
         /// <summary>
         /// 
@@ -150,6 +156,15 @@ namespace TonalityMarkingAndDigestInProc.web.demo
         {
             //IMPORTANT for TM-OM resources
             Environment.CurrentDirectory = HttpContext.Current.Server.MapPath( "~/" );
+
+            try
+            {
+                log4net.Config.XmlConfigurator.Configure();
+            }
+            catch ( Exception ex )
+            {                
+                Debug.WriteLine( ex );
+            }
         }
 
         public bool IsReusable
@@ -206,43 +221,61 @@ namespace TonalityMarkingAndDigestInProc.web.demo
 				GenerateAllSubthemes = false, 
 			};
 
-            #region [.result.]
-            switch ( lp.ProcessType )
+            try
             {
-                case ProcessTypeEnum.Digest:
-                #region [.code.]
+                var html = default(string);
+
+                #region [.result.]
+                switch ( lp.ProcessType )
                 {
-                    lingvisticsInput.Options = LingvisticsResultOptions.OpinionMiningWithTonality;
-
-                    var lingvisticResult = ConcurrentFactoryHelper.ProcessText( lingvisticsInput );
-
-                    var html = ConvertToHtml( lp.Context, lingvisticResult.OpinionMiningWithTonalityResult );
-                    return (html);
-                }
-                #endregion
-
-                case ProcessTypeEnum.TonalityMarking:
-                #region [.code.]
-                {
-                    lingvisticsInput.TonalityMarkingInput = new TonalityMarkingInputParams4InProcess();
-                    if ( !lp.InquiryText.IsNullOrWhiteSpace() )
+                    case ProcessTypeEnum.Digest:
+                    #region [.code.]
                     {
-                        lingvisticsInput.TonalityMarkingInput.InquiriesSynonyms = lp.InquiryText.ToTextList();
+                        lingvisticsInput.Options = LingvisticsResultOptions.OpinionMiningWithTonality;
+
+                        var lingvisticResult = ConcurrentFactoryHelper.ProcessText( lingvisticsInput );
+
+                        html = ConvertToHtml( lp.Context, lingvisticResult.OpinionMiningWithTonalityResult );
                     }
-                    lingvisticsInput.ObjectAllocateMethod = lp.ObjectAllocateMethod.GetValueOrDefault( ObjectAllocateMethod.FirstVerbEntityWithRoleObj );
-                    lingvisticsInput.Options = LingvisticsResultOptions.Tonality;                    
+                    break;
+                    #endregion
 
-                    var lingvisticResult = ConcurrentFactoryHelper.ProcessText( lingvisticsInput );
+                    case ProcessTypeEnum.TonalityMarking:
+                    #region [.code.]
+                    {
+                        lingvisticsInput.TonalityMarkingInput = new TonalityMarkingInputParams4InProcess();
+                        if ( !lp.InquiryText.IsNullOrWhiteSpace() )
+                        {
+                            lingvisticsInput.TonalityMarkingInput.InquiriesSynonyms = lp.InquiryText.ToTextList();
+                        }
+                        lingvisticsInput.ObjectAllocateMethod = lp.ObjectAllocateMethod.GetValueOrDefault( ObjectAllocateMethod.FirstVerbEntityWithRoleObj );
+                        lingvisticsInput.Options = LingvisticsResultOptions.Tonality;                    
 
-                    var html = ConvertToHtml( lp.Context, lingvisticResult.TonalityResult, lp.OutputType );
-                    return (html);
+                        var lingvisticResult = ConcurrentFactoryHelper.ProcessText( lingvisticsInput );
+
+                        html = ConvertToHtml( lp.Context, lingvisticResult.TonalityResult, lp.OutputType );
+                    }
+                    break;
+                    #endregion
+
+                    default:
+                        throw (new ArgumentException( lp.ProcessType.ToString() ));
                 }
                 #endregion
 
-                default:
-                    throw (new ArgumentException( lp.ProcessType.ToString() ));
+
+                if ( !lp.TextIsDummy )
+                {
+                    LogManager.GetLogger( string.Empty )?.Info( $"'{lp.ProcessType}', TEXT: '{lp.Text}'" );
+                }
+
+                return (html);
             }
-            #endregion
+            catch ( Exception ex )
+            {
+                LogManager.GetLogger( string.Empty )?.Error( $"'{lp.ProcessType}', TEXT: '{lp.Text}'", ex );
+                throw;
+            }
         }
 
         private static string ConvertToHtml( HttpContext context, TonalityMarkingOutputResult result, OutputTypeEnum outputType )

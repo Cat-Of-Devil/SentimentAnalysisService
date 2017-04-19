@@ -290,8 +290,8 @@ IncludeExceptionDetailInFaults = true
 
         public static OutputResult4DigestWcfService ExecuteTonalityMarking4DigestWcfService( XElement sent, InputParamsBase inputParams )
         {
-            try
-            {
+            //try
+            //{
                 #region [.check input.]
                 sent.ThrowIfNotSent();
                 inputParams.ThrowIfNull( "inputParams" );
@@ -311,9 +311,9 @@ IncludeExceptionDetailInFaults = true
                 tonalityStopwatch.Stop();
                 #endregion
 
-                #region [.write in log.]
-                LOG.InfoEx( MethodBase.GetCurrentMethod().Name, WcfHelper.ClientRemoteAddress, tonalityStopwatch.Elapsed, inputParams );
-                #endregion
+                //#region [.write in log.]
+                //LOG.InfoEx( MethodBase.GetCurrentMethod().Name, WcfHelper.ClientRemoteAddress, tonalityStopwatch.Elapsed, inputParams );
+                //#endregion
 
                 #region [.result.]
                 /*var result = CreateResult( sentenceText.XDocument, language, inputParams );*/
@@ -321,14 +321,14 @@ IncludeExceptionDetailInFaults = true
 
                 return (new OutputResult4DigestWcfService( SentenceText.GetSent( result.XDocument ), result.Positive, result.Negative ));
                 #endregion
-            }
-            catch ( Exception ex )
-            {
-                #region [.write error in log & rethrow.]
-                LOG.ErrorEx( MethodBase.GetCurrentMethod().Name, ex, WcfHelper.ClientRemoteAddress, inputParams, sent ); 
-                throw; 
-                #endregion
-            }
+            //}
+            //catch ( Exception ex )
+            //{
+            //    #region [.write error in log & rethrow.]
+            //    LOG.ErrorEx( MethodBase.GetCurrentMethod().Name, ex, WcfHelper.ClientRemoteAddress, inputParams, sent ); 
+            //    throw; 
+            //    #endregion
+            //}
         }
 
         private static IntermediateResult CreateResult4DigestWcfService( XDocument xdocument, Language language, InputParamsBase inputParams )
