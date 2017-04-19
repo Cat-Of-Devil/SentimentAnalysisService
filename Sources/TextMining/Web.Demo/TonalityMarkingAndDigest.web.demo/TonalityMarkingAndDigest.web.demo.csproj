@@ -101,7 +101,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AntiBotHelper.cs" />
+    <Compile Include="App_Code\AntiBotHelper.cs" />
+    <Compile Include="App_Code\Config.cs" />
+    <Compile Include="App_Code\Extensions.cs" />
     <Compile Include="Captcha.aspx.cs">
       <DependentUpon>Captcha.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -109,10 +111,6 @@
     <Compile Include="Captcha.aspx.designer.cs">
       <DependentUpon>Captcha.aspx</DependentUpon>
     </Compile>
-    <Compile Include="captcha\AntiBot.cs" />
-    <Compile Include="captcha\CaptchaControl.cs" />
-    <Compile Include="captcha\CaptchaImage.cs" />
-    <Compile Include="CaptchaImageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RESTProcessHandler.ashx.cs">
       <DependentUpon>RESTProcessHandler.ashx</DependentUpon>
@@ -136,6 +134,10 @@
     <ProjectReference Include="..\..\TonalityMarking\Client\TonalityMarking.WcfClient\TonalityMarking.WcfClient.csproj">
       <Project>{7504b4c7-0f35-4b9d-92e3-ee2524df4016}</Project>
       <Name>TonalityMarking.WcfClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\[lib]\captcha\captcha.csproj">
+      <Project>{c781afbc-1fc6-47dc-90e0-5817dede25db}</Project>
+      <Name>captcha</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

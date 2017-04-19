@@ -182,6 +182,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[lib]", "[lib]", "{A0B4CD8E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TonalityMarkingAndDigest.web.demo", "..\..\TextMining\Web.Demo\TonalityMarkingAndDigest.web.demo\TonalityMarkingAndDigest.web.demo.csproj", "{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "captcha", "..\..\TextMining\Web.Demo\[lib]\captcha\captcha.csproj", "{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1118,6 +1120,22 @@ Global
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|Win32.Build.0 = Release|Any CPU
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|x86.ActiveCfg = Release|Any CPU
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368}.Release|x86.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|Win32.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Debug|x86.Build.0 = Debug|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Win32.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|Win32.Build.0 = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1203,5 +1221,6 @@ Global
 		{F3411EA5-7C79-4FCB-BBAF-723CD8B0B997} = {7271E09A-AA0C-4A61-A43E-0B2DA93334E7}
 		{A0B4CD8E-82C8-45E1-96B9-7715E4DEF87C} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
+		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
 	EndGlobalSection
 EndGlobal
