@@ -30,4 +30,7 @@ del "Sources\Tests\*.csproj.user" /S/Q/F/A
 del "Sources\.sln\Linguistics\*.VC.db" /S/Q/F/A
 del "Sources\.sln\Linguistics-with-OM-TM\*.VC.db" /S/Q/F/A
 
+for /F %%i in ('dir /A:d /S/B "Sources\.sln\Linguistics\ipch*"') do rd /S/Q %%i
+for /F %%i in ('dir /A:d /S/B "Sources\.sln\Linguistics-with-OM-TM\ipch*"') do rd /S/Q %%i
+
 pause
