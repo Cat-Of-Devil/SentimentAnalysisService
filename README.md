@@ -1,4 +1,4 @@
-# SentimentAnalysisService
+﻿# SentimentAnalysisService
 
 Sentiment (tonality) and opinion mining analysis in Russian texts / Определение тональности и выделение высказываний в тексте на русском языке.
 
@@ -20,7 +20,7 @@ Sentiment (tonality) and opinion mining analysis in Russian texts / Опреде
 объекта в предложении.
 
 ##### view-1:
-![alt tag](https://github.com/zamgi/SentimentAnalysisService/blob/VS-2015/demo-img-1.png)
+![alt tag](https://github.com/zamgi/SentimentAnalysisService-demo/blob/master/demo-img-1.png)
 
 ##### view-2:
-![alt tag](https://github.com/zamgi/SentimentAnalysisService/blob/VS-2015/demo-img-2.png)
+![alt tag](https://github.com/zamgi/SentimentAnalysisService-demo/blob/master/demo-img-2.png)
