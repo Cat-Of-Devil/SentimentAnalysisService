@@ -2,7 +2,7 @@
 
 Sentiment (tonality) and opinion mining analysis in Russian texts / Определение тональности и выделение высказываний в тексте на русском языке.
 
-<a target="_blank" href="http://ston.apphb.com/index.html" title="very slowly demo, because life is a piece of... life">[ live demo ]</a>  (very slowly)
+<a target="_blank" href="http://ston.apphb.com/index.html" title="very slow demo on free hosting">[ live demo ]</a>  (very slow demo on free hosting)
 
 Эмоциональная оценка, выраженная в тексте, также называется тональностью, или сентиментом текста (от англ. sentiment — чувство; мнение, настроение). Эмоциональная составляющая, выраженная на уровне лексемы или коммуникативного фрагмента3, называется лексической тональностью (или лексическим сентиментом). Тональность текста в целом определяется лексической тональностью составляющих его единиц и правилами их сочетания.
 
