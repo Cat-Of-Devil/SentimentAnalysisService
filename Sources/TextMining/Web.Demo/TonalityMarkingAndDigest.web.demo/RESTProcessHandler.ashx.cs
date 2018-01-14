@@ -109,6 +109,8 @@ namespace TonalityMarkingAndDigest.web.demo
 
         static RESTProcessHandler()
         {
+            Environment.CurrentDirectory = AppContext.BaseDirectory;
+
             _LingvisticsServer = new Lazy< ILingvisticsServer >( () => 
                 LingvisticsServer.Create( Config.LINGUISTICS_SERVER_URL, Config.LINGUISTICS_SERVER_TIMEOUT_IN_SECONDS ), true );
 
