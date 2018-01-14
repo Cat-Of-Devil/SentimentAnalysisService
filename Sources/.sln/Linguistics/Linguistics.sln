@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinguisticUI", "..\..\Tests\LingvisticUI\LinguisticUI.csproj", "{1E5B578C-8B5C-4BE4-A179-7FE6890DD35B}"
 EndProject
@@ -414,20 +414,20 @@ Global
 		{5016ED7A-762D-4A32-9911-737EC83211CC}.Release|x86.ActiveCfg = Release|Any CPU
 		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Win32.ActiveCfg = Debug|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Win32.Build.0 = Debug|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|x86.ActiveCfg = Debug|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|x86.Build.0 = Debug|x86
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|Win32.Build.0 = Debug|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Debug|x86.Build.0 = Debug|Any CPU
 		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Mixed Platforms.Build.0 = Release|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Win32.ActiveCfg = Release|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Win32.Build.0 = Release|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|x86.ActiveCfg = Release|x86
-		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|x86.Build.0 = Release|x86
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Win32.ActiveCfg = Release|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|Win32.Build.0 = Release|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|x86.ActiveCfg = Release|Any CPU
+		{F9B86F0B-E4D4-4F0C-9010-F64C70103EF3}.Release|x86.Build.0 = Release|Any CPU
 		{3F51EC37-C4E4-458F-A1BE-C9959D3F6431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F51EC37-C4E4-458F-A1BE-C9959D3F6431}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F51EC37-C4E4-458F-A1BE-C9959D3F6431}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -1222,5 +1222,8 @@ Global
 		{A0B4CD8E-82C8-45E1-96B9-7715E4DEF87C} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
 		{2A9EF7B8-6804-4797-BDF2-EC9F8ED66368} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
 		{C781AFBC-1FC6-47DC-90E0-5817DEDE25DB} = {F3411EA5-7C79-4FCB-BBAF-723CD8B0B997}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C9047AB-DE86-48E2-B0FB-04B3C01B97C6}
 	EndGlobalSection
 EndGlobal

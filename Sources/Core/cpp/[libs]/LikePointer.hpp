@@ -1,6 +1,7 @@
 #ifndef LikePointer_HPP
 #define LikePointer_HPP
 
+#include <memory>
 #include "SelectIterator.hpp"
 #include "ReferenceCounters.hpp"
 

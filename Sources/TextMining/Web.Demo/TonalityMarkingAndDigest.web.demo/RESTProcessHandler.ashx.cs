@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
@@ -169,7 +169,6 @@ namespace TonalityMarkingAndDigest.web.demo
             }
         }
 #endif
-
         public bool IsReusable
         {
             get { return (true); }

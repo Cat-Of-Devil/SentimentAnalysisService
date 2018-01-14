@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.ServiceModel.Security.Tokens;
-using System.Text;
 
 using OpinionMining.OpinionMiningWcfService;
 

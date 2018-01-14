@@ -16,6 +16,7 @@ using namespace SS::Interface::Supervisor;
 
 #include <vector>
 #include <string>
+#include <memory>
 using namespace std;
 
 
