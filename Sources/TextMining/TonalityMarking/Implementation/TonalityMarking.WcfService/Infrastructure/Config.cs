@@ -128,11 +128,9 @@ namespace TonalityMarking
                     {
                         if ( _ThemesManager == null )
                         {
-
 #if LICENSED
                             CheckLicenseByMachineIdentifier();
 #endif
-
                             _ThemesManager = CreateThemesManager();
                         }
                     }
@@ -153,11 +151,10 @@ namespace TonalityMarking
             var identifier = GetMachineIdentifierHelper.GetMachineIdentifier().TrimWhiteSpaces();
 
             // лицензионная информация
-            ResourceManager _licRM = new ResourceManager("lic",
-                        Assembly.Load("lic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0ab1e0136c77fed1")); 
+            var licRM = new ResourceManager( "lic", Assembly.Load( "lic, Version=0.0.0.0, Culture=neutral, PublicKeyToken=0ab1e0136c77fed1" ) );
 
-			//Проверка лицензииk
-            var lic_identifier = _licRM.GetString( "MachineIdentifier" ).TrimWhiteSpaces();
+			//Проверка лицензии
+            var lic_identifier = licRM.GetString( "MachineIdentifier" ).TrimWhiteSpaces();
             if ( string.Compare( identifier, lic_identifier, true ) != 0 )
 			{
                 var a1 = identifier    .SplitBy( ';' );
