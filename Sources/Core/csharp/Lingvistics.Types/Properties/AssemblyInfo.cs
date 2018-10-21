@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Org")]
 [assembly: AssemblyProduct("Lingvistics.Types")]
-[assembly: AssemblyCopyright("Copyright © XZ 2016")]
+[assembly: AssemblyCopyright("Copyright © xz 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

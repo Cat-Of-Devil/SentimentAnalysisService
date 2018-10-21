@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Logger")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("XZ")]
+[assembly: AssemblyCompany("xz")]
 [assembly: AssemblyProduct("Logger")]
-[assembly: AssemblyCopyright("Copyright © XZ 2016")]
+[assembly: AssemblyCopyright("Copyright © xz 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

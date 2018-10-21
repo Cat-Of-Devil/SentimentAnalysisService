@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("LingvisticsWorkInProcess")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("XZ")]
+[assembly: AssemblyCompany("xz")]
 [assembly: AssemblyProduct("LingvisticsWorkInProcess")]
-[assembly: AssemblyCopyright("Copyright © XZ 2017")]
+[assembly: AssemblyCopyright("Copyright © xz 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
